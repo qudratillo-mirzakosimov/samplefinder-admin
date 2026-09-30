@@ -261,6 +261,8 @@ export interface UserProfile extends Models.Document {
   lastname?: string
   username?: string
   phoneNumber?: string
+  /** True once the user completed SMS phone verification, or was grandfathered by the backfill. */
+  phoneVerified?: boolean
   dob?: string
   zipCode?: string
   isBlocked?: boolean
@@ -968,6 +970,7 @@ export const USER_PROFILE_LIST_FIELDS = [
   'lastname',
   'username',
   'phoneNumber',
+  'phoneVerified',
   'dob',
   'avatarURL',
   'isBlocked',
